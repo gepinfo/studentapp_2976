@@ -54,6 +54,12 @@ service:
   studentdetails: 
     name: studentdetails
     type: NodePort
+    port: 8048
+    targetPort: 8048
+
+  systementry: 
+    name: systementry
+    type: NodePort
     port: 8046
     targetPort: 8046
 
@@ -85,6 +91,10 @@ deployment:
   studentdetails: 
     name: studentdetails
     image: geppettotest/studentapp-studentdetails:1.0
+
+  systementry: 
+    name: systementry
+    image: geppettotest/studentapp-systementry:1.0
 
   camundapod:
      name: camundapod

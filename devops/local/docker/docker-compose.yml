@@ -170,6 +170,7 @@ services:
       - securitymanager
       - systemcredentialmanager
       - studentdetails
+      - systementry
 
     networks:
       - studentapp_2976_net
@@ -249,6 +250,27 @@ services:
     build: ../../../application/services/custom_services/studentdetails
     image: studentdetails-2976
     container_name: studentdetails-2976
+    ports: 
+      - 8048:8048
+    env_file: .env
+    depends_on:
+      - mongo
+    networks:
+      - studentapp_2976_net
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: 0.0.0.0:24224
+        fluentd-async-connect: "true"
+        tag: fluent
+    mem_limit: 300m
+    mem_reservation: 150m
+    cpus: 0.2
+
+  systementry: 
+    build: ../../../application/services/custom_services/systementry
+    image: systementry-2976
+    container_name: systementry-2976
     ports: 
       - 8046:8046
     env_file: .env

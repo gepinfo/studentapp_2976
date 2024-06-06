@@ -70,7 +70,8 @@ module.exports = {
             ],
             "environmentFiles": null,
             "environment": [{"name":"MONGO_DB_URL","value":"mongodb://admin:password@127.0.0.1:27017/studentapp_2976?authSource=admin"},{"name":"MONGO_DOMAIN","value":"127.0.0.1"},{"name":"SECURITYURL","value":"http://127.0.0.1:8003"},{"name":"AUTHPROXYURL","value":"http://127.0.0.1:8001"},{"name":"ADMINURL","value":"http://127.0.0.1:8004"},{"name":"GCAMURL","value":"http://127.0.0.1:8007"},{"name":"APIGATEWAY","value":"http://127.0.0.1:8000"},{"name":"SYSTEMCREDENTIALMANAGERURL","value":"http://127.0.0.1:8005"}
-            ,{"name":"STUDENTDETAILSURL","value":"http://studentapp.local:8046"}
+            ,{"name":"SYSTEMENTRYURL","value":"http://127.0.0.1:8046"}
+            ,{"name":"STUDENTDETAILSURL","value":"http://studentapp0.local:8048"}
             ],
             "secrets": null,
             "mountPoints": [
@@ -292,6 +293,7 @@ module.exports = {
             ],
             "environmentFiles": null,
             "environment": [{"name":"MONGO_DB_URL","value":"mongodb://admin:password@127.0.0.1:27017/studentapp_2976?authSource=admin"},{"name":"MONGO_DOMAIN","value":"127.0.0.1"},{"name":"SECURITYURL","value":"http://127.0.0.1:8003"},{"name":"AUTHPROXYURL","value":"http://127.0.0.1:8001"},{"name":"ADMINURL","value":"http://127.0.0.1:8004"},{"name":"GCAMURL","value":"http://127.0.0.1:8007"},{"name":"APIGATEWAY","value":"http://127.0.0.1:8000"}
+            ,{"name":"SYSTEMENTRYURL","value":"http://127.0.0.1:8046"}
             ],
             "mountPoints": [
                 {
@@ -365,8 +367,8 @@ module.exports = {
             }
         },
         {
-            "name": "studentdetails-2976",
-            "image": `${process.env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/geppetto-generatedcode-studentapp-2976-studentdetails:latest`,
+            "name": "systementry-2976",
+            "image": `${process.env.AWS_ACCOUNT_ID}.dkr.ecr.us-east-1.amazonaws.com/geppetto-generatedcode-studentapp-2976-systementry:latest`,
             "memoryReservation": "300",
             "resourceRequirements": null,
             "essential": true,
